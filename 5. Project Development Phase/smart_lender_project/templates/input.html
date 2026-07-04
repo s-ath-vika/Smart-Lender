@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Assessment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="heading">
+        <h2>Applicant Risk Profile Evaluation</h2>
+        <p>Please supply precise demographic and financial telemetry below</p>
+    </div>
+    <form action="/submit" method="POST">
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Gender</label>
+                <select name="Gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Marital Status</label>
+                <select name="Married" required>
+                    <option value="">Select Status</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Dependents</label>
+                <select name="Dependents" required>
+                    <option value="">Select Dependents Count</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3+</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Education Qualifications</label>
+                <select name="Education" required>
+                    <option value="">Select Level</option>
+                    <option value="1">Graduate</option>
+                    <option value="0">Not Graduate</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Employment Classification</label>
+                <select name="Self_Employed" required>
+                    <option value="">Select Status</option>
+                    <option value="1">Self Employed</option>
+                    <option value="0">Salaried / Professional</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Applicant Gross Income</label>
+                <input type="number" name="ApplicantIncome" placeholder="e.g. 5400" required>
+            </div>
+            <div class="form-group">
+                <label>Co-Applicant Gross Income</label>
+                <input type="number" name="CoapplicantIncome" placeholder="e.g. 0 if none" required>
+            </div>
+            <div class="form-group">
+                <label>Requested Loan Principal Amount</label>
+                <input type="number" name="LoanAmount" placeholder="e.g. 130" required>
+            </div>
+            <div class="form-group">
+                <label>Amortization Loan Term (Days)</label>
+                <input type="number" name="Loan_Amount_Term" placeholder="e.g. 360" required>
+            </div>
+            <div class="form-group">
+                <label>Historical Credit Standing</label>
+                <select name="Credit_History" required>
+                    <option value="">Select Bureau Profile</option>
+                    <option value="1">Satisfactory Delinquency Records (1)</option>
+                    <option value="0">Adverse Delinquency Records (0)</option>
+                </select>
+            </div>
+            <div class="form-group full-width">
+                <label>Geographic Property Zone</label>
+                <select name="Property_Area" required>
+                    <option value="">Select Rating Category</option>
+                    <option value="0">Rural Area Zone</option>
+                    <option value="1">Semi Urban Complex</option>
+                    <option value="2">Metropolitan / Urban District</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-actions">
+            <input type="submit" value="Execute Underwriting Engine">
+        </div>
+    </form>
+</div>
+</body>
+</html>
